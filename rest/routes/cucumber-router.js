@@ -50,7 +50,7 @@ router.get('/', function(req, res){
                     });
                 })
             });
-            //console.log(JSON.stringify(cucumber, null, '\t'));
+            console.log(JSON.stringify(cucumber, null, '\t'));
             //console.log("skipped: " + skipped);
 
             if (error !== null) {

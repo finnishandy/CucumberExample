@@ -12,10 +12,11 @@
                 <ul>
                     {{#each this.elements}}
                         <li><span class="scenario">{{this.name}}</span></li>
+                        {{#if this.tags.[0].name}}<li>Priority: {{this.tags.[0].name}}</li>{{/if}}
                         <li>
                             <ul>
                                 {{#each this.steps}}
-                                    <li>{{this.name}} - <span class="status {{this.result.status}}">{{this.result.status}}</span></li>
+                                    <li>{{this.keyword}} {{this.name}} - <span class="status {{this.result.status}}">{{this.result.status}}</span></li>
                                 {{/each}}
                             </ul>
                         </li>
