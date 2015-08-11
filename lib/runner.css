@@ -1,0 +1,85 @@
+html, body {
+  margin:10px;
+  min-height:100%;
+}
+
+
+/* cucjs-html */
+
+.runAllFeatures {
+  font-size : 14px; cursor: pointer;
+}
+.fRight {float: right;}
+.fLeft {float: left;}
+.cucjs-html { font-family: Consolas;}
+.cucjs-html .hidden { visibility: hidden;}
+.cucjs-html .visible { visibility: visible;}
+
+.cucjs-html .displayNone { display: none;}
+.cucjs-html .displayInline { display: inline;}
+
+.cucjs-html .background {
+  margin-left: 70px;
+  font-size: 12px;
+}
+.cucjs-html .background p {
+  margin:0 0 0 75px;
+}
+.cucjs-html .tags {
+  padding : 0; margin :0; color :#686868; font-size: 13px;
+}
+.cucjs-html .tags span {
+  margin-right: 5px;
+  cursor: pointer;
+}
+.cucjs-html .description {
+  padding : 0; margin :0 0 0 72px; color :#686868; font-size: 13px;
+}
+
+.fontSmall {font-size: 12px;}
+.fontMedium {font-size: 13px;}
+.fontBid {font-size: 14px;}
+
+.cucjs-html h1 { font-size: 15px; font-weight: bold; padding: 0; margin: 0;}
+.cucjs-html h2 { font-size: 14px; font-weight: bold; padding: 0; margin: 0;}
+.cucjs-html h3 { font-size: 13px; padding: 0; margin: 0;}
+.cucjs-html h4 { font-size: 12px; padding: 0; margin: 0;}
+
+.cucjs-html .results { font-size: 12px; margin: 10px 0;}
+.cucjs-html .results h4 { display: inline; }
+
+.cucjs-html ul {list-style-type: none; margin: 5px 0; padding-left: 72px;}
+.cucjs-html ul li {padding: 0; margin: 0;}
+
+.cucjs-html .details table {font-size : 11px; margin-left: 15px;}
+.cucjs-html .details table tr th { border-bottom: 1px solid #000;}
+.cucjs-html .errorDetails {
+  background: #FFCCFF;
+  font-size: 12px;
+  white-space: pre;
+}
+
+.cucjs-html .scenariosList > li.collapsed {
+  margin-bottom : 8px;
+  overflow: hidden;
+}
+.cucjs-html .scenariosList > li.expanded {
+  height : auto;
+}
+
+.cucjs-html .detail {
+  color: #686868;
+  font-size: 11px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.cucjs-html .stepsList > li {
+  margin-bottom : 4px;
+}
+.cucjs-html .passed { color: green; }
+.cucjs-html .failed { color: red; }
+.cucjs-html .skipped{ color: blue; }
+.cucjs-html .pending{ color: orange; }
+
+#results h3,h4 { padding: 0; margin: 0;}

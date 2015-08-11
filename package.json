@@ -1,0 +1,19 @@
+{
+  "name": "CucumberTest",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "test": "./node_modules/.bin/cucumber.js"
+  },
+  "dependencies": {
+    "express": "^4.13.1",
+    "express-handlebars": "^2.0.1",
+    "handlebars": "^3.0.3"
+  },
+  "devDependencies": {
+    "connect": "^3.4.0",
+    "cucumber": "^0.5.2",
+    "serve-static": "^1.10.0",
+    "web-terminal": "^0.7.0"
+  }
+}

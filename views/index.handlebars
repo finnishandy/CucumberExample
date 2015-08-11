@@ -1,0 +1,31 @@
+<div class="summary"><h3>Summary</h3>
+    <span class="steps">Steps: {{summary.steps}}</span>
+    <span class="skipped">Skipped: {{summary.skipped}}</span>
+    <span class="pending">Pending: {{summary.pending}}</span>
+</div>
+{{#each foo}}
+    <section>
+        <h1>{{this.type}}</h1>
+        <ul>
+            <li><span class="feature">{{jiraLinking this.name}}</span></li>
+            <li>
+                <ul>
+                    {{#each this.elements}}
+                        <li><span class="scenario">{{this.name}}</span></li>
+                        <li>
+                            <ul>
+                                {{#each this.steps}}
+                                    <li>{{this.name}} - <span class="status {{this.result.status}}">{{this.result.status}}</span></li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                    {{/each}}
+                </ul>
+            </li>
+        </ul>
+    </section>
+{{/each}}
+<div class="summary">
+    <span class="skipped">Skipped: {{summary.skipped}}</span>
+    <span class="pending">Pending: {{summary.pending}}</span>
+</div>

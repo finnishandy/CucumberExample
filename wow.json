@@ -1,0 +1,180 @@
+[
+  {
+    "id": "This-is-an-example-feature",
+    "name": "This is an example feature",
+    "description": "In order to learn Cucumber\nAs a developer\nI want to make this feature pass",
+    "line": 1,
+    "keyword": "Feature",
+    "uri": "/Users/sakariruoho/WebstormProjects/CucumberExample/features/Feature1.feature",
+    "elements": [
+      {
+        "name": "wrote my first scenario",
+        "id": "This-is-an-example-feature;wrote-my-first-scenario",
+        "line": 6,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "steps": [
+          {
+            "name": "a variable set to 1",
+            "line": 7,
+            "keyword": "Given ",
+            "result": {
+              "status": "pending"
+            },
+            "match": {}
+          },
+          {
+            "name": "I increment the variable by 2",
+            "line": 8,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "the variable should contain 3",
+            "line": 9,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Verify-that-booking-a-service-has-the-expected-flow-and-behavior",
+    "name": "Verify that booking a service has the expected flow and behavior",
+    "description": "",
+    "line": 1,
+    "keyword": "Feature",
+    "uri": "/Users/sakariruoho/WebstormProjects/CucumberExample/features/VWMVW-11.feature",
+    "elements": [
+      {
+        "name": "Login and open the \"Book a service\" page",
+        "id": "Verify-that-booking-a-service-has-the-expected-flow-and-behavior;login-and-open-the-\"book-a-service\"-page",
+        "line": 3,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "steps": [
+          {
+            "name": "user is Logged in",
+            "line": 4,
+            "keyword": "Given ",
+            "result": {
+              "status": "pending"
+            },
+            "match": {}
+          },
+          {
+            "name": "user opens the \"Book a service\" page",
+            "line": 5,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "the page should load having step 1 displayed",
+            "line": 6,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Observe the contents of the loaded page",
+        "id": "Verify-that-booking-a-service-has-the-expected-flow-and-behavior;observe-the-contents-of-the-loaded-page",
+        "line": 8,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "steps": [
+          {
+            "name": "user has opened a page",
+            "line": 9,
+            "keyword": "Given ",
+            "result": {
+              "status": "pending"
+            },
+            "match": {}
+          },
+          {
+            "name": "the page has been loaded",
+            "line": 10,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "first step of \"Book a service\" should contain 2 sections: \"My car\", \"More info\" (optional), \"Continue\" button",
+            "line": 11,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Verify-that-the-account-settings-section-has-the-expected-behavior",
+    "name": "Verify that the account settings section has the expected behavior",
+    "description": "",
+    "line": 1,
+    "keyword": "Feature",
+    "uri": "/Users/sakariruoho/WebstormProjects/CucumberExample/features/VWMVW-13.feature",
+    "elements": [
+      {
+        "name": "Log in and select \"Account\" menu",
+        "id": "Verify-that-the-account-settings-section-has-the-expected-behavior;log-in-and-select-\"account\"-menu",
+        "line": 3,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "steps": [
+          {
+            "name": "user is Logged in",
+            "line": 4,
+            "keyword": "Given ",
+            "result": {
+              "status": "pending"
+            },
+            "match": {}
+          },
+          {
+            "name": "user selects the \"Account\" menu",
+            "line": 5,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "The page containing \"Account settings\" and \"Car settings\" should load",
+            "line": 6,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          }
+        ]
+      }
+    ]
+  }
+]

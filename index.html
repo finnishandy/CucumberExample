@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Cucumber.js browser runner</title>
+    <!--
+    <script type="text/javascript" src="lib/vendor/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="lib/runner.js"></script>
+    <script type="text/javascript" src="lib/listeners/report.js"></script>
+    <script type="text/javascript" src="lib/listeners/html.js"></script>
+    <script type="text/javascript" src="lib/listeners/htmlReport.js"></script>
+    <script type="text/javascript" src="lib/listeners/console.js"></script>
+    <script type="text/javascript" src="lib/vendor/cucumber.min.js"></script>
+    -->
+    <script type="text/javascript" src="lib/runner.min.js"></script>
+    
+    <style type="text/css">
+      body {background : #E8E8E8; font-family: Consolas;}
+      .mainContainer { padding: 30px; margin-bottom: 30px; 
+                       width: 80%; margin : 0 auto; 
+                       border: 1px solid #88888; background: #fff;}
+      .mainContainer.api ul{ list-style-type: none; font-size: 12px; font-style: italic;}
+      .mainContainer.api li {margin-bottom: 10px;}
+    </style>
+    <link href="lib/runner.css" rel="stylesheet" type="text/css"/>
+
+  </head>
+  <body>
+
+    <div class="mainContainer">
+      <h2>Cucumber JS Browser Runner</h2>
+      <div class="fRight fontSmall">
+        <input type="checkbox" value="displayAll" id="displayAll"/>
+        <label for="displayAll">Display all details</label>
+      </div>
+      <h3 class="runAllFeatures" onclick="location.href = location.protocol+'//'+location.host+location.pathname">Run all</h3>
+      <div id="cucumberjs-htmlreport" class="cucjs-html">
+        <div class="results">
+            <h2>Results</h2>
+            <h4>Features:</h4>
+              total : <span data-type="featureCount">0</span>
+              passed : <span class="passed" data-type="featuresPassed">0</span>
+              skipped : <span class="skipped" data-type="featureSkipped">0</span>
+              failed : <span class="failed" data-type="featureFailed">0</span>
+              pending : <span class="pending" data-type="featurePending">0</span>
+            <br>
+            <h4>Scenarios:</h4>
+              total : <span data-type="scenarioCount">0</span>
+              passed : <span class="passed" data-type="scenarioPassed">0</span>
+              skipped : <span class="skipped" data-type="scenarioSkipped">0</span>
+              failed : <span class="failed" data-type="scenarioFailed">0</span>
+              pending : <span class="pending" data-type="scenarioPending">0</span>
+            <br>
+            <h4>Steps:</h4>
+              total : <span data-type="stepsCount">0</span>
+              passed : <span class="passed" data-type="stepsPassed">0</span>
+              skipped : <span class="skipped" data-type="stepsSkipped">0</span>
+              failed : <span class="failed" data-type="stepsFailed">0</span>
+              pending : <span class="pending" data-type="stepsPending">0</span>
+            <h3>Duration : <span class="pending duration"></span></h3>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <br/>
+      <script>
+          var globalRunner = new CucumberJsBrowserRunner({
+              timeout : 1000,
+              captureConsoleOutput : false
+          });
+          globalRunner.loadFeatures([{
+            name : 'demoFeature',
+            backgroundSteps : 'demoFeature'
+          },{
+            name : 'second',
+            backgroundSteps : ['demoFeature', 'secondBackground']
+          }], function () {
+              globalRunner.run({
+                  tags : [],
+                  callback : function () {
+                      console.log('summary', globalRunner.getReport().getSummary());
+                  }
+              });
+              console.log('loaded', globalRunner.getReport().getSummary());
+          });
+      </script>
+    
+    <div class="mainContainer api">
+      <h3>Api reference</h3>
+      <ul>
+          <li><h4>CucumberJsBrowserRunner(&lt;object&gt;options) : return runner instance</h4>
+            <ul><h4>Options</h4>
+                <li>&lt;integer&gt; timeout - timeout in miliseconds for every step, if step will not call callback before it runner will stop execution and throw error</li>
+                <li>&lt;boolean&gt; captureConsoleOutput - if true runner will capture all console logs for further debugging</li>
+            </ul>
+          </li>
+          <li><h4>instance.loadFeatures(&lt;array&gt;features) - load features</h4>
+            <ul><h4>Arguments</h4>
+                <li>&lt;array&gt; features : pass either &lt;string&gt; feature name or &lt;object&gt; with feature name and background steps (&lt;string&gt; or &lt;array&gt;)</li>
+            </ul>
+          </li>
+          <li><h4>instance.run(&lt;object&gt;options)</h4>
+            <ul><h4>Arguments</h4>
+                <li>&lt;array&gt; tags - single &lt;string&gt; or &lt;array&gt; of tags</li>
+                <li>&lt;function&gt; callback - callback that will be called after test is done</li>
+            </ul>
+          </li>
+          <li><h4>instance.getReport() - generates report &lt;object&gt;</h4>
+            <ul><h4>Report methods:</h4>
+                <li>&lt;function&gt; getSummary() - returns &lt;string&gt; result - passed, skipped, failed</li>
+                <li>&lt;function&gt; getFailedScenarios() - returns &lt;array&gt; of failed scenarios</li>
+                <li>&lt;function&gt; getFailedFeatures() - returns &lt;array&gt; of failed features</li>
+            </ul>
+          </li>
+          <li><h4>instance.getConsoleOutput() - stringified console output</h4>
+          <li><h4>instance.debugConsoleOutput(instance.getConsoleOutput()) - reprints console output</h4>
+          </li>
+      </ul>      
+    </div>
+
+    <div class="mainContainer">
+      <h3><a href="https://github.com/akania/cucumberjs-browserRunner">Github project</a></h3>
+      <h3><a href="https://github.com/cucumber/cucumber-js">Cucumber.js</a></h3>  
+    </div>
+    <br/>
+    <br/>
+
+     <div class="mainContainer">
+      <h2><a href="tests">Tests</a></h2>
+      <h3>Example how to setup runner</h3>
+      <textarea rows="20" cols="120">
+
+        <!doctype html>
+        <html>
+          <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+            <title>Cucumber.js browser runner</title>
+
+            <link href="lib/runner.css" rel="stylesheet" type="text/css"/>
+            <script type="text/javascript" src="lib/runner.min.js"></script>
+
+            <style type="text/css">
+              body {background : #E8E8E8; font-family: Consolas;}
+              .mainContainer { padding: 30px; margin-bottom: 30px; width: 80%; margin : 0 auto; border: 1px solid #88888; background: #fff;}
+            </style>
+          </head>
+          <body>
+
+            <div class="mainContainer">
+              <h2>Cucumber JS Browser Runner</h2>
+              <h3 class="runAllFeatures" onclick="location.href = location.protocol+'//'+location.host+location.pathname">Run all</h3>
+              <div id="cucumberjs-htmlreport" class="cucjs-html"></div>
+            </div>
+            <br/>
+              <script>
+                  var globalRunner = new CucumberJsBrowserRunner({
+                      timeout : 10000,
+                      captureConsoleOutput : true
+                  });
+                  globalRunner.loadFeatures([{
+                    name : 'demoFeature',
+                    backgroundSteps : 'demoFeature'
+                  }], function () {
+                      globalRunner.run({
+                          tags : [],
+                          callback : function () {
+                              console.log('summary', globalRunner.getReport().getSummary());
+                          }
+                      });
+                      console.log('loaded', globalRunner.getReport().getSummary());
+                  });
+              </script>
+            .....
+      </textarea>
+    </div>
+  </body>
+</html>
