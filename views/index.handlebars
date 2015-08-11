@@ -7,12 +7,12 @@
     <section>
         <h1>{{this.type}}</h1>
         <ul>
-            <li><span class="feature">{{jiraLinking this.name}}</span></li>
+            <li><span class="feature">{{jiraLinking this.name}}</span>{{#if this.tags}}<li>Tags:{{#each this.tags}}{{this.name}} {{/each}}</li>{{/if}}</li>
             <li>
                 <ul>
                     {{#each this.elements}}
                         <li><span class="scenario">{{this.name}}</span></li>
-                        {{#if this.tags.[0].name}}<li>Priority: {{this.tags.[0].name}}</li>{{/if}}
+                        {{#if this.tags}}<li>Tags:{{#each this.tags}}{{this.name}} {{/each}}</li>{{/if}}
                         <li>
                             <ul>
                                 {{#each this.steps}}
