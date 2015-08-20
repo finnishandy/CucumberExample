@@ -2,8 +2,9 @@
     <span class="steps">Steps: {{summary.steps}}</span>
     <span class="skipped">Skipped: {{summary.skipped}}</span>
     <span class="pending">Pending: {{summary.pending}}</span>
+    <span class="tags">Tags: {{#each summary.tags}}{{@key}}{{this}}{{/each}}</span>
 </div>
-{{#each foo}}
+{{#each cuke}}
     <section>
         <h1>{{this.type}}</h1>
         <ul>

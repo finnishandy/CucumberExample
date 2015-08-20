@@ -14,14 +14,16 @@ router.use(function timeLog(req, res, next) {
 
 /* Handling routes. */
 router.get('/', function(req, res){
-    exec('cucumber-js --format=json',
+    var parser = new CukeParser();
+    exec(parser.commandResolver(req),
         function (error, stdout, stderr) {
-            var parser = new CukeParser(JSON.parse(stdout));
+            parser.setCuke(JSON.parse(stdout));
             if (error !== null) {
                 console.log('exec error: ' + error);
             } else {
-                res.render('index', {cuke: parser.getCuke(), summary: parser.getSummary() });
-                console.log(JSON.stringify(parser.getCuke()));
+                parser.parseCukeJson();
+                res.render('index', {cuke: parser.getCuke(), summary: parser.getSummary()});
+                //console.log(JSON.stringify(parser.getCuke(), null, '\t'));
             }
         }
     );

@@ -1,6 +1,6 @@
 https://www.npmjs.com/package/web-terminal
 
-amd to node https://www.npmjs.com/package/nodefy
+amd to node https://www.npmjs.com/package/nodefy, https://www.npmjs.com/package/amd-wrap, http://moutjs.com/
 
 Jira BDD: https://marketplace.atlassian.com/plugins/pro.behave.hosted
 
