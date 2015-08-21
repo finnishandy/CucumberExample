@@ -1,0 +1,26 @@
+https://confluence.tribalddb.co.uk/download/attachments/21055700/SequenceDiagram_EVC_Flow.png?version=1&modificationDate=1435251484000&api=v2
+
+http://confluence.tribalddb.co.uk/display/VWTech/CitNOW+integration
+Videos: CitNOW
+	dealerCode: 397
+	customeremail
+	registrationNumber
+	customerpostCode
+	videoType:
+	
+	MP4
+
+
+￼1. Generic (no event taking place):
+Paragraph: We’re constantly keeping track of your car’s health so you don’t have to. Check it out below.
+CTA: Car health
+Link: Anchors down to car health module
+
+2. Service due (based off Polk predictive services, time TBD):
+Paragraph: Your service is due on <date>, click below to book your service. CTA: Book a service
+Link: Links the user to “A.2.1.0.0 - Service Booking - Step 1”
+
+3. Service tracking update (step 1-3):
+Paragraph: Your car is currently with at <service retailer name> undergoing it’s service. Track its progress below.
+CTA: View progress
+Link: Anchors down to service tracking module
